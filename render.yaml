@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: telegram-chat-manager
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python manager_bot.py
+    autoDeploy: true
+    envVars:
+      API_TOKEN:
+        description: Токен твоего бота от @BotFather
+        # ← оставь пустым, заполнишь потом через веб-интерфейс
